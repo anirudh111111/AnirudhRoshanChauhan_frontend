@@ -1,0 +1,16 @@
+Based on the code below answer the following queries:
+
+Q1. Explain what the simple List component does.
+Q2. What problems / warnings are there with code?
+
+
+A1. 
+A2.  A few issues or warnings exist with the code:
+
+1. The 'onClickHandler' parameter is incorrectly declared in the PropTypes validation for the 'SingleListItem' component. 'PropTypes.func' should be used instead.
+
+2. The 'PropTypes.array' method in the 'WrappedListComponent' component should be 'PropTypes.arrayOf'. An array of objects should be validated using the syntax "PropTypes.arrayOf(PropTypes.shape(...))".
+
+3. The 'items' attribute in the 'WrappedListComponent' component defaults to 'null,' however the '.map()' function will not operate on a 'null' value. Instead, it ought to be set to an empty array.
+
+4. The 'onClick' event handler in the 'SingleListItem' component is incorrectly defined. To stop it from being called right away on render, it should be enclosed in an arrow function. 'onClick='() => onClickHandler(index)', for instance.
